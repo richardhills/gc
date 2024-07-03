@@ -614,6 +614,10 @@ void gc_unroot_roots(GarbageCollector* gc)
     }
 }
 
+bool gc_is_allocated(GarbageCollector *gc, void *ptr) {
+    return gc_allocation_map_get(gc->allocs, ptr) != NULL;
+}
+
 size_t gc_stop(GarbageCollector* gc)
 {
     gc_unroot_roots(gc);

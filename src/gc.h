@@ -51,6 +51,7 @@ void* gc_make_static(GarbageCollector* gc, void* ptr);
 /*
  * Helper functions and stdlib replacements.
  */
+bool gc_is_allocated(GarbageCollector *gc, void *ptr);
 char* gc_strdup (GarbageCollector* gc, const char* s);
 
 #endif /* !__GC_H__ */
